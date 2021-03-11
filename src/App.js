@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import CloseButton from './components/CloseButton'
 
-function App() {
+class App extends React.Component {
+constructor(props){
+    super(props)
+    this.state={
+      name: 'state1'
+    }
+  }
+
+  componentDidMount(){
+    this.setState({
+      name: 'state1',
+      isOn: true
+    })
+  }
+
+  handleButton = ( ) =>{
+    this.setState({
+      isOn: !this.state.isOn
+    } )
+
+  }
+  
+
+render(){
+  const {isOn, name} = this.state
+  this.handleButton()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="main" style={{"color": "red"}}>
+      <h1>{ name } </h1>
+      {isOn ? <CloseButton handleButton={this.handleButton} name={name}/> : <p>{this.state.name}</p>}
+      
+  </div>
   );
 }
+}
+
+
 
 export default App;
