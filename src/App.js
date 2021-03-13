@@ -1,41 +1,12 @@
 import React from 'react'
-import './App.css';
-import Counter from './components/Counter'
+import './styles/index.scss';
+import Header from './containers/Header'
 
-class App extends React.Component {
-constructor(props){
-    super(props)
-    this.state={
-      name: 'state1'
-    }
-  }
-
-  // componentDidMount(){
-  //   this.setState({
-  //     name: 'state1',
-  //     isOn: true
-  //   })
-  // }
-
-  handleButton = ( ) =>{
-    this.setState({
-      isOn: !this.state.isOn
-    } )
-
-  }
-  
-
-render(){
-  const {isOn, name} = this.state
-  return (
-      <>
-        <div></div>
-        <Counter />
-      </>
-  );
+const App = ( ) => {
+  return(
+   <>
+    <Header />
+  </>)
 }
-}
-
-
 
 export default App;
