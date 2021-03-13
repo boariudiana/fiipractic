@@ -3,7 +3,7 @@ import React from 'react'
  const CloseButton = (props) => {
     return (
         <div>
-        <button onClick={() => props.handleButton()}> 
+        <button onClick={() => props.handleButton}> 
              {props.name}
              </button>
         </div>

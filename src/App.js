@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import CloseButton from './components/CloseButton'
+import Counter from './components/Counter'
 
 class App extends React.Component {
 constructor(props){
@@ -10,12 +10,12 @@ constructor(props){
     }
   }
 
-  componentDidMount(){
-    this.setState({
-      name: 'state1',
-      isOn: true
-    })
-  }
+  // componentDidMount(){
+  //   this.setState({
+  //     name: 'state1',
+  //     isOn: true
+  //   })
+  // }
 
   handleButton = ( ) =>{
     this.setState({
@@ -27,13 +27,11 @@ constructor(props){
 
 render(){
   const {isOn, name} = this.state
-  this.handleButton()
   return (
-    <div className="main" style={{"color": "red"}}>
-      <h1>{ name } </h1>
-      {isOn ? <CloseButton handleButton={this.handleButton} name={name}/> : <p>{this.state.name}</p>}
-      
-  </div>
+      <>
+        <div></div>
+        <Counter />
+      </>
   );
 }
 }
