@@ -1,5 +1,8 @@
 import React from 'react'
 import './App.css';
+import CounterClassContainer from './components/CounterClassContainer';
+import CounterFuncContainer from './components/CounterFuncContainer';
+
 import Counter from './components/Counter'
 
 class App extends React.Component {
@@ -29,7 +32,10 @@ render(){
   const {isOn, name} = this.state
   return (
       <>
-        <div></div>
+        <div>
+        <CounterClassContainer/>
+        <CounterFuncContainer/>
+        </div>
         <Counter />
       </>
   );
