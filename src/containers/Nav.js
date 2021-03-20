@@ -1,16 +1,17 @@
 import React from "react";
+import {NavLink} from 'react-router-dom'
 
 const navItems = [
-  { title: "Home", url: "https://www.youtube.com/" },
-  { title: "About", url: "" },
-  { title: "Products", url: "" },
+  { title: "Home", url: "/" },
+  { title: "About", url: "/about" },
+  { title: "Products", url: "/products" },
 ];
 
 const Nav = () => {
   const generateNavList = () =>
     navItems.map((item, index) => (
       <div key={item.title}>
-        <a href={item.url}> {item.title} </a>
+        <NavLink to={item.url}> {item.title} </NavLink>
       </div>
     ));
 
